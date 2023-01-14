@@ -52,7 +52,7 @@ getResults();
                                     <td className="border px-4 py-2">{{ order.id }}</td>
                                     <td className="border px-4 py-2">{{ order.provider.name }}</td>
                                     <td className="border px-4 py-2">{{ order.store.name }}</td>
-                                    <td className="border px-4 py-2">S/. {{ order.total }}</td>
+                                    <td className="border px-4 py-2">S/. {{ parseFloat(order.total).toFixed(2) }}</td>
                                     <td className="border px-4 py-2">{{ order.user.name }}</td>
                                     <td className="border px-4 py-2">{{ order.status_name }}</td>
                                     <td className="border px-4 py-2">{{ order.date }}</td>

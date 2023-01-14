@@ -21,7 +21,7 @@ class OrderController extends Controller
         $limit = $request->has('limit') ? $request->get('limit') : 10;
 
         $list = Order::offset(($page - 1) * $limit)
-                    ->paginate($limit);
+                    ->orderBy('date', 'desc')->paginate($limit);
 
         return new OrderCollection($list);
     }

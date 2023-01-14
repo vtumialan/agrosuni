@@ -103,9 +103,9 @@ export default {
                                 <tr className="bg-gray-100">
                                     <th className="px-4 py-2 w-14">No.</th>
                                     <th className="px-4 py-2">Producto</th>
-                                    <th className="px-4 py-2">Precio</th>
-                                    <th className="px-4 py-2">Cantidad</th>
-                                    <th className="px-4 py-2">Total</th>
+                                    <th className="px-4 py-2 w-28">Precio</th>
+                                    <th className="px-4 py-2 w-28">Cantidad</th>
+                                    <th className="px-4 py-2 w-32">Total</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -119,13 +119,13 @@ export default {
                                     <td className="border px-4 py-2">
                                         {{ product.name }}
                                     </td>
-                                    <td className="border px-4 py-2">
+                                    <td className="border px-4 py-2 text-center">
                                         S/. {{ parseFloat(product.price).toFixed(2) }}
                                     </td>
-                                    <td className="border px-4 py-2">
+                                    <td className="border px-4 py-2 text-center">
                                         {{ product.unid }}
                                     </td>
-                                    <td className="border px-4 py-2">
+                                    <td className="border px-4 py-2 text-center">
                                         S/. {{ parseFloat(product.unid * product.price).toFixed(2) }}
                                     </td>
                                 </tr>

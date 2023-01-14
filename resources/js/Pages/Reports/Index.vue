@@ -171,7 +171,7 @@ export default {
                                                 {{ product.year }}{{ this.getNumberMonth(product.month) }}
                                             </td>
                                             <td className="border px-4 py-2 text-center">
-                                                S/. {{ product.total }}
+                                                S/. {{ parseFloat(product.total).toFixed(2) }}
                                             </td>
                                         </tr>
                                     </tbody>
@@ -283,7 +283,7 @@ export default {
                                                 {{ provider.year }}{{ this.getNumberMonth(provider.month) }}
                                             </td>
                                             <td className="border px-4 py-2 text-center">
-                                                S/. {{ provider.total }}
+                                                S/. {{ parseFloat(provider.total).toFixed(2) }}
                                             </td>
                                         </tr>
                                     </tbody>
