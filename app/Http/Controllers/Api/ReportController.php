@@ -25,6 +25,8 @@ class ReportController extends Controller
             ->join('products as p', 'op.product_id', '=', 'p.id')
             ->groupBy('p.id', 'p.name', DB::raw('year(orders.date)'), DB::raw('month(orders.date)'))
             ->where('orders.status', 3)
+            ->where(DB::raw('year(orders.date)'), 2023)
+            ->where(DB::raw('month(orders.date)'), 1)
             ->orderBy(DB::raw('year(orders.date)'), 'DESC')
             ->orderBy(DB::raw('month(orders.date)'), 'DESC')
             ->get();
@@ -38,6 +40,8 @@ class ReportController extends Controller
             ->join('orders as o', 'op.order_id', '=', 'o.id')
             ->groupBy('products.id', 'products.name', DB::raw('year(o.date)'), DB::raw('month(o.date)'))
             ->where('o.status', 3)
+            ->where(DB::raw('year(o.date)'), 2023)
+            ->where(DB::raw('month(o.date)'), 1)
             ->orderBy(DB::raw('year(o.date)'), 'DESC')
             ->orderBy(DB::raw('month(o.date)'), 'DESC')
             ->get();
@@ -48,6 +52,8 @@ class ReportController extends Controller
             ->join('orders as o', 'providers.id', '=', 'o.provider_id')
             ->join('orders_products as op', 'o.id', '=', 'op.order_id')
             ->join('products as p', 'op.product_id', '=', 'p.id')
+            ->where(DB::raw('year(o.date)'), 2023)
+            ->where(DB::raw('month(o.date)'), 1)
             ->groupBy('providers.id', 'providers.name', 'p.name', DB::raw('year(o.date)'), DB::raw('month(o.date)'))
             ->orderBy(DB::raw('year(o.date)'), 'DESC')
             ->orderBy(DB::raw('month(o.date)'), 'DESC')
@@ -62,6 +68,8 @@ class ReportController extends Controller
             ->join('orders_products as op', 'o.id', '=', 'op.order_id')
             ->groupBy('providers.id', 'providers.name', DB::raw('year(o.date)'), DB::raw('month(o.date)'))
             ->where('o.status', 3)
+            ->where(DB::raw('year(o.date)'), 2023)
+            ->where(DB::raw('month(o.date)'), 1)
             ->orderBy(DB::raw('year(o.date)'), 'DESC')
             ->orderBy(DB::raw('month(o.date)'), 'DESC')
             ->get();

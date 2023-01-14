@@ -95,7 +95,7 @@ export default {
     <BreezeAuthenticatedLayout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Reportes
+                Reporte del Periodo 202301
             </h2>
         </template>
         <div class="py-12">
